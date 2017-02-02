@@ -9,6 +9,8 @@ class Swe4rTest < Test::Unit::TestCase
   
   def test_swe_julday
     assert_equal(2444838.972916667, Swe4r::swe_julday(1981, 8, 22, 11.35))
+    #original gem value
+    #assert_equal(32444838.972916667, Swe4r::swe_julday(1981, 8, 22, 11.35))
   end
   
   def test_swe_set_topo

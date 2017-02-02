@@ -4,11 +4,11 @@ SHELL = /bin/sh
 #### Start of system configuration section. ####
 
 srcdir = .
-topdir = /Users/andrewkirk/.rvm/rubies/ruby-1.9.2-p290/include/ruby-1.9.1
-hdrdir = /Users/andrewkirk/.rvm/rubies/ruby-1.9.2-p290/include/ruby-1.9.1
-arch_hdrdir = /Users/andrewkirk/.rvm/rubies/ruby-1.9.2-p290/include/ruby-1.9.1/$(arch)
+topdir = /Users/akira/.rvm/rubies/ruby-2.3.1/include/ruby-2.3.0
+hdrdir = /Users/akira/.rvm/rubies/ruby-2.3.1/include/ruby-2.3.0
+arch_hdrdir = /Users/akira/.rvm/rubies/ruby-2.3.1/include/ruby-2.3.0/$(arch)
 VPATH = $(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby
-prefix = $(DESTDIR)/Users/andrewkirk/.rvm/rubies/ruby-1.9.2-p290
+prefix = $(DESTDIR)/Users/akira/.rvm/rubies/ruby-2.3.1
 rubylibprefix = $(libdir)/$(RUBY_BASE_NAME)
 exec_prefix = $(prefix)
 vendorhdrdir = $(rubyhdrdir)/vendor_ruby
@@ -43,7 +43,7 @@ sitearchdir = $(sitelibdir)/$(sitearch)
 vendorlibdir = $(vendordir)/$(ruby_version)
 vendorarchdir = $(vendorlibdir)/$(sitearch)
 
-CC = /usr/bin/gcc-4.2
+CC = /usr/bin/gcc
 CXX = g++
 LIBRUBY = $(LIBRUBY_SO)
 LIBRUBY_A = lib$(RUBY_SO_NAME)-static.a
@@ -56,7 +56,7 @@ RUBY_EXTCONF_H =
 cflags   =  $(optflags) $(debugflags) $(warnflags)
 optflags = -O3
 debugflags = -ggdb
-warnflags = -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wshorten-64-to-32 -Wno-long-long
+warnflags = -Wextra -Wno-unused-parameter -Wno-parentheses -Wpointer-arith -Wwrite-strings -Wno-missing-field-initializers -Wshorten-64-to-32 -Wno-long-long -v
 CFLAGS   = -fno-common $(cflags)  -fno-common -pipe 
 INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir)
 DEFS     = 
@@ -73,11 +73,13 @@ EXEEXT =
 
 RUBY_BASE_NAME = ruby
 RUBY_INSTALL_NAME = ruby
-RUBY_SO_NAME = ruby.1.9.1
-arch = x86_64-darwin11.2.0
+RUBY_SO_NAME = ruby.2.3.1
+arch = x86_64-darwin14
+
 sitearch = $(arch)
 ruby_version = 1.9.1
-ruby = /Users/andrewkirk/.rvm/rubies/ruby-1.9.2-p290/bin/ruby
+
+ruby = /Users/akira/.rvm/rubies/ruby-2.3.1/bin/ruby
 RUBY = $(ruby)
 RM = rm -f
 RM_RF = $(RUBY) -run -e rm -- -rf
